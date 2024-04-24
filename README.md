@@ -16,4 +16,6 @@ Upon pressing the `Stream` button, the client sends a request to the server, rec
 2. RootEncoder library for RTSP handling.
 3. okHttp for HTTP requests.
 
+Tested on Realme 9 PRO
+
 Work in progress.
