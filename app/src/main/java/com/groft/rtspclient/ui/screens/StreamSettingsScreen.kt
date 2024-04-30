@@ -117,5 +117,25 @@ fun StreamSettingsScreen(
         ) {
             Text("Stream")
         }
+        Button(
+            onClick = {
+                viewModel.viewModelScope.launch {
+                    val url1 = viewModel.sendStreamRequest().toString()
+                    val settings = StreamSettings(
+                        url = url1,
+                        width = width.value,
+                        height = height.value,
+                        bitrate = bitrate.value,
+                        fps = fps.value,
+                        codec = getCodec(codec.value)
+                    )
+                    navController.navigate("dualRtspStreamScreen/${settings.toUrlString()}")
+                }
+
+            },
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text("Dual Stream")
+        }
     }
 }
