@@ -35,7 +35,7 @@ fun SettingsItem(
 ) {
     var expanded by remember { mutableStateOf(false) }
     var choose by remember {
-        mutableStateOf("<Not Choosen>")
+        mutableStateOf("<Not Chosen>")
     }
     Row(
         modifier = modifier
@@ -56,7 +56,7 @@ fun SettingsItem(
             )
         }
         Text(
-            text = "Choosen: $choose",
+            text = "Chosen: $choose",
             fontFamily = FontFamily.SansSerif,
             fontSize = 18.sp,
             color = Color.White,
