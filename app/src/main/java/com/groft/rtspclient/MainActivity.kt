@@ -22,6 +22,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.groft.rtspclient.data.models.StreamSettings
+import com.groft.rtspclient.ui.screens.DualRtspStreamScreen
 import com.groft.rtspclient.ui.screens.RtspStreamScreen
 import com.groft.rtspclient.ui.theme.RTSPClientTheme
 import com.groft.rtspclient.ui.viewmodels.ApiViewModel
@@ -69,6 +70,15 @@ class MainActivity : ComponentActivity() {
                         val settings = StreamSettings.fromUrlString(settingsString)
                         RtspStreamScreen(settings, navController)
                     }
+                    composable(
+                        route = "dualRtspStreamScreen/{settingsString}",
+                        arguments = listOf(navArgument("settingsString") { type = NavType.StringType })
+                    ) { navBackStackEntry ->
+                        val settingsString = navBackStackEntry.arguments?.getString("settingsString") ?: ""
+                        val settings = StreamSettings.fromUrlString(settingsString)
+                        DualRtspStreamScreen(settings, navController)
+                    }
+
                 }
                 //RtspStreamView()
             }
