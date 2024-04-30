@@ -65,7 +65,7 @@ dependencies {
 
 
 
-    implementation("com.github.pedroSG94.RootEncoder:library:2.3.5")
+    implementation("com.github.pedroSG94.RootEncoder:library:2.4.4")
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
     implementation("androidx.activity:activity-compose:1.8.2")
